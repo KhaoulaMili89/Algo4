@@ -1,0 +1,35 @@
+ALGORITHM ALGO4
+VAR
+TAB : ARRAY_OF INTEGER[];
+n,i: INTEGER;
+
+PROCEDURE insertionSort( VAR arr: ARRAY_OF INTEGER, n:INTEGER)
+VAR
+key, j,i:INTEGER;  
+BEGIN
+	FOR  i FROM 1 TO i < n STEP 1 DO
+	
+		key := arr[i];
+		j := i - 1;
+
+		WHILE (j >= 0 && arr[j] < key)
+		
+			arr[j + 1] := arr[j];
+			j := j - 1;
+		END_WHILE
+		arr[j + 1] := key;
+	END_FOR
+END
+
+BEGIN
+
+read(n);
+FOR i FROM 0 TO n-1 STEP 1 DO
+read(TAB[i]);
+END_FOR
+insertionSort(TAB,n);
+FOR i FROM 0 TO n-1 STEP 1 DO
+write(TAB[i]);
+END_FOR
+
+END
